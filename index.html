@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Useful Tools Hub</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolHub - Useful Tools</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="video-background-container">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="videos/abstract_ring.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
     <header>
-      <nav>
-        <div class="logo">ToolHub</div>
-        <ul>
-          <li><a href="grade-calculator.html">Grade Calculator</a></li>
-          <li><a href="word-counter.html">Word Counter</a></li>
-          <li><a href="unit-converter.html">Unit Converter</a></li>
-          <li><a href="password-generator.html">Password Generator</a></li>
-          <li><a href="qr-code.html">QR Code Generator</a></li>
-          <li><a href="pomodoro.html">Pomodoro Timer</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="logo"><a href="index.html">ToolHub</a></div>
+            <ul>
+                <li><a href="grade-calculator.html">Grade Calculator</a></li>
+                <li><a href="word-counter.html">Word Counter</a></li>
+                <li><a href="unit-converter.html">Unit Converter</a></li>
+                <li><a href="password-generator.html">Password Generator</a></li>
+                <li><a href="qr-code.html">QR Code Generator</a></li>
+                <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main id="tool-content-area">
-      <section id="welcome-message" class="tool-section">
-        <h2>Welcome to ToolHub!</h2>
-        <p>
-          This is a collection of useful mini-tools. Select a tool from the menu
-          above to get started.
-        </p>
-        <p>Current tools available:</p>
-        <ul>
-          <li>Grade Calculator</li>
-          <li>Word Counter (Coming Soon)</li>
-          <li>Unit Converter (Coming Soon)</li>
-          <li>Password Generator (Coming Soon)</li>
-          <li>QR Code Generator (Coming Soon)</li>
-          <li>Pomodoro Timer (Coming Soon)</li>
-        </ul>
-      </section>
+    <main>
+        <section class="tool-section">
+            <h2>Welcome to ToolHub!</h2>
+            <p>This is a collection of useful mini-tools built with human intuition and machine precision. Select a tool from the menu above to get started.</p>
+            <br>
+            <p>Current tools available:</p>
+            <ul class="welcome-message-list">
+                 <li><a href="grade-calculator.html">Grade Calculator</a> <span>Calculate your weighted grade average.</span></li>
+                 <li><a href="word-counter.html">Word Counter</a> <span>(Coming Soon)</span></li>
+                 <li><a href="unit-converter.html">Unit Converter</a> <span>(Coming Soon)</span></li>
+                 <li><a href="password-generator.html">Password Generator</a> <span>(Coming Soon)</span></li>
+                 <li><a href="qr-code.html">QR Code Generator</a> <span>(Coming Soon)</span></li>
+                 <li><a href="pomodoro.html">Pomodoro Timer</a> <span>(Coming Soon)</span></li>
+            </ul>
+        </section>
     </main>
 
     <footer>
       <p>
-        © 2023 Retkes Ivan -
-        <a href="https://github.com/Ivan-R3tk3s-PG/Useful_web" target="_blank"
-          >View on GitHub</a
-        >
+        © 2023 Retkes Ivan -<a href="https://github.com/Ivan-R3tk3s-PG/Useful_web" target="_blank">View on GitHub</a>
       </p>
     </footer>
-  </body>
+
+</body>
 </html>

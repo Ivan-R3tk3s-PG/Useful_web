@@ -1,85 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Calculator - ToolHub</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="video-background-container">
+        <video autoplay muted loop playsinline id="bgVideo">
+            <source src="videos/abstract_ring.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
     <header>
-      <nav>
-        <div class="logo">
-          <a href="index.html" style="color: white; text-decoration: none"
-            >ToolHub</a
-          >
-        </div>
-        <ul>
-          <li><a href="grade-calculator.html">Grade Calculator</a></li>
-          <li><a href="word-counter.html">Word Counter</a></li>
-          <li><a href="unit-converter.html">Unit Converter</a></li>
-          <li><a href="password-generator.html">Password Generator</a></li>
-          <li><a href="qr-code.html">QR Code Generator</a></li>
-          <li><a href="pomodoro.html">Pomodoro Timer</a></li>
-        </ul>
-      </nav>
+        <nav>
+            <div class="logo"><a href="index.html">ToolHub</a></div>
+            <ul>
+                <li><a href="grade-calculator.html" class="active">Grade Calculator</a></li>
+                <li><a href="word-counter.html">Word Counter</a></li>
+                <li><a href="unit-converter.html">Unit Converter</a></li>
+                <li><a href="password-generator.html">Password Generator</a></li>
+                <li><a href="qr-code.html">QR Code Generator</a></li>
+                <li><a href="pomodoro.html">Pomodoro Timer</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main id="tool-content-area">
-      <section id="grade-calculator-tool" class="tool-section">
-        <h2>Grade Calculator</h2>
-        <p>
-          Enter your subjects, grades (numeric, e.g., 1-5 or 0-100), and
-          credits.
-        </p>
+    <main>
+        <section id="grade-calculator-tool" class="tool-section">
+            <h2>Grade Calculator</h2>
+            <p style="text-align: center; margin-bottom: 25px; color: var(--text-medium);">Enter your subjects, grades (numeric), and credits/weights below.</p>
 
-        <div id="subjects-container">
-          <div class="subject-entry">
-            <input
-              type="text"
-              class="subject-name"
-              placeholder="Subject Name (e.g., Math)"
-            />
-            <input
-              type="number"
-              class="subject-grade"
-              placeholder="Grade (e.g., 4 or 85)"
-            />
-            <input
-              type="number"
-              class="subject-credits"
-              placeholder="Credits (e.g., 3)"
-            />
-            <button
-              type="button"
-              class="remove-subject"
-              onclick="removeSubjectEntry(this)"
-            >
-              Remove
-            </button>
-          </div>
-        </div>
+            <div id="subjects-container">
+                <div class="subject-entry">
+                    <input type="text" class="subject-name" placeholder="Subject Name (e.g., Quantum Physics)">
+                    <input type="number" class="subject-grade" placeholder="Grade (e.g., 88)">
+                    <input type="number" class="subject-credits" placeholder="Credits (e.g., 4)">
+                    <button type="button" class="remove-subject" onclick="removeSubjectEntry(this)">Remove</button>
+                </div>
+            </div>
 
-        <button type="button" id="add-subject-btn">Add Another Subject</button>
-        <button type="button" id="calculate-average-btn">
-          Calculate Average
-        </button>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" id="add-subject-btn">Add Subject</button>
+                <button type="button" id="calculate-average-btn">Calculate Average</button>
+            </div>
 
-        <div id="grade-average-result"></div>
-      </section>
+
+            <div id="grade-average-result" style="margin-top: 30px; min-height: 50px;"></div>
+        </section>
     </main>
 
     <footer>
-      <p>
-        © 2023 Your Name -
-        <a
-          href="https://github.com/your-username/your-repo-name"
-          target="_blank"
-          >View on GitHub</a
-        >
-      </p>
+        <p>© 2023 Retkes Ivan - <a href="https://github.com/your-username/your-repo-name" target="_blank">View on GitHub</a></p>
     </footer>
 
     <script src="grade-calculator.js"></script>
-  </body>
+</body>
 </html>
