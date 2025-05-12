@@ -1,0 +1,182 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* You can add 'active' class with JS if needed for current page */
+    background-color: #555;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tool-section {
+    padding: 15px;
+    /* border: 1px solid #ddd; */ /* Optional border for the section */
+    /* margin-bottom: 20px; */ /* Optional margin */
+}
+
+.tool-section h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Grade Calculator Specific Styles */
+#grade-calculator-tool .subject-entry { /* More specific selector if needed */
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 10px; /* Adds space between elements in the entry */
+}
+
+#grade-calculator-tool input[type="text"],
+#grade-calculator-tool input[type="number"] {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex-grow: 1; /* Allow inputs to take available space */
+}
+#grade-calculator-tool input.subject-name {
+    min-width: 150px; /* Give name a bit more base width */
+}
+#grade-calculator-tool input.subject-grade,
+#grade-calculator-tool input.subject-credits {
+    width: 80px; /* Fixed width for grade/credits */
+    flex-grow: 0;
+}
+
+
+#grade-calculator-tool button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+#grade-calculator-tool button.remove-subject {
+    background-color: #dc3545; /* Red for remove button */
+    padding: 8px 12px;
+    margin-top: 0; /* Align with inputs */
+    margin-right: 0;
+}
+#grade-calculator-tool button.remove-subject:hover {
+    background-color: #c82333;
+}
+
+
+#grade-calculator-tool button:hover {
+    background-color: #0056b3;
+}
+
+#grade-average-result {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+    margin-top: auto;
+}
+
+footer a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    nav ul li {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    #grade-calculator-tool .subject-entry {
+        flex-direction: column;
+        align-items: stretch; /* Make inputs full width on small screens */
+    }
+    #grade-calculator-tool .subject-entry input,
+    #grade-calculator-tool .subject-entry button.remove-subject {
+        width: 100%; /* Full width for inputs/button in column layout */
+        margin-bottom: 5px;
+    }
+    #grade-calculator-tool button.remove-subject {
+        margin-top: 5px;
+    }
+
+}
