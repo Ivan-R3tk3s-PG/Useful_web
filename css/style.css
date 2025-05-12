@@ -1,182 +1,358 @@
+:root {
+  --base-bg: #fafafa;
+  --card-bg: #ffffff;
+  --text-color: #333333;
+  --heading-color: #2c2c2c;
+  --pastel-blue: #a3c9f1;
+  --dusty-rose: #e7a6a1;
+  --lavender: #c9b6e4;
+  --mint-green: #b7e4c7;
+  --soft-peach: #ffe0b5;
+  --primary-accent: var(--pastel-blue);
+  --hover-accent: var(--dusty-rose);
+  --font-headline: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+  --soft-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  --stronger-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --primary-accent-transparent: rgba(163, 201, 241, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.7;
+  background-color: var(--base-bg);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-medium);
+}
+
+a {
+  color: var(--primary-accent);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--hover-accent);
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headline);
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 0.75em;
+  line-height: 1.3;
 }
 
 header {
-    background-color: #333;
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 1.5rem 0;
+  width: 100%;
+  box-shadow: var(--soft-shadow);
+  border-bottom: 1px solid #e0e0e0;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+nav .logo a {
+  color: var(--heading-color);
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
+  list-style: none;
+  display: flex;
 }
 
 nav ul li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
+  color: var(--text-color);
+  padding: 0.6rem 1rem;
+  border-radius: var(--border-radius-medium);
+  display: block;
+  font-weight: 400;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 nav ul li a:hover,
-nav ul li a.active { /* You can add 'active' class with JS if needed for current page */
-    background-color: #555;
+nav ul li a.active {
+  background-color: var(--primary-accent);
+  color: white;
 }
 
 main {
-    flex: 1;
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  flex: 1;
+  width: 100%;
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 .tool-section {
-    padding: 15px;
-    /* border: 1px solid #ddd; */ /* Optional border for the section */
-    /* margin-bottom: 20px; */ /* Optional margin */
+  background-color: var(--card-bg);
+  padding: 25px 30px;
+  border-radius: var(--border-radius-large);
+  box-shadow: var(--soft-shadow);
+  margin-bottom: 30px;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.tool-section:hover {
+  box-shadow: var(--stronger-shadow);
 }
 
 .tool-section h2 {
-    margin-top: 0;
-    color: #333;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+  font-size: 1.7rem;
+  color: var(--heading-color);
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-/* Grade Calculator Specific Styles */
-#grade-calculator-tool .subject-entry { /* More specific selector if needed */
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    gap: 10px; /* Adds space between elements in the entry */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #d0d0d0;
+  border-radius: var(--border-radius-medium);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: #fdfdfd;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-accent);
+  box-shadow: 0 0 0 2px var(--primary-accent-transparent);
 }
 
-#grade-calculator-tool input[type="text"],
-#grade-calculator-tool input[type="number"] {
-    padding: 8px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    flex-grow: 1; /* Allow inputs to take available space */
+button,
+input[type="submit"],
+input[type="button"] {
+  background-color: var(--primary-accent);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: var(--border-radius-medium);
+  cursor: pointer;
+  font-family: var(--font-headline);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-right: 10px;
+  margin-top: 10px;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
 }
-#grade-calculator-tool input.subject-name {
-    min-width: 150px; /* Give name a bit more base width */
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: var(--hover-accent);
+  transform: translateY(-1px);
 }
-#grade-calculator-tool input.subject-grade,
-#grade-calculator-tool input.subject-credits {
-    width: 80px; /* Fixed width for grade/credits */
-    flex-grow: 0;
+button:active,
+input[type="submit"]:active,
+input[type="button"]:active {
+  transform: translateY(0px);
 }
 
-
-#grade-calculator-tool button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-top: 10px;
+#grade-calculator-tool .subject-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #e8e8e8;
+  border-radius: var(--border-radius-medium);
+  background-color: var(--base-bg);
 }
+
+#grade-calculator-tool .subject-entry input[type="text"],
+#grade-calculator-tool .subject-entry input[type="number"] {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 #grade-calculator-tool button.remove-subject {
-    background-color: #dc3545; /* Red for remove button */
-    padding: 8px 12px;
-    margin-top: 0; /* Align with inputs */
-    margin-right: 0;
+  background-color: var(--dusty-rose);
+  padding: 8px 15px;
+  margin-top: 5px;
+  width: auto;
+  align-self: flex-start;
 }
 #grade-calculator-tool button.remove-subject:hover {
-    background-color: #c82333;
-}
-
-
-#grade-calculator-tool button:hover {
-    background-color: #0056b3;
+  background-color: var(--lavender);
 }
 
 #grade-average-result {
-    margin-top: 15px;
-    font-weight: bold;
-    font-size: 1.2em;
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 4px;
+  margin-top: 25px;
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: 15px 20px;
+  background-color: var(--mint-green);
+  color: #275c3a;
+  border-radius: var(--border-radius-medium);
+  text-align: center;
+}
+
+pre,
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+    monospace;
+  background-color: #eef1f5;
+  padding: 3px 6px;
+  border-radius: var(--border-radius-medium);
+  font-size: 0.9em;
+}
+pre {
+  padding: 15px;
+  overflow-x: auto;
+  margin: 15px 0;
+  border: 1px solid #d0d0d0;
+}
+
+.welcome-message-list {
+  list-style: none;
+  padding-left: 0;
+}
+.welcome-message-list li {
+  background-color: var(--card-bg);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--soft-shadow);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.welcome-message-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--stronger-shadow);
+}
+.welcome-message-list li a {
+  font-weight: 600;
+  color: var(--heading-color);
+  display: block;
+}
+.welcome-message-list li span {
+  font-size: 0.85em;
+  color: var(--text-color);
+  opacity: 0.7;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    margin-top: auto;
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  margin-top: auto;
+  border-top: 1px solid #e0e0e0;
 }
 
 footer a {
-    color: #00bcd4;
-    text-decoration: none;
+  color: var(--primary-accent);
+  font-weight: 600;
 }
-
 footer a:hover {
-    text-decoration: underline;
+  color: var(--hover-accent);
+}
+.footer-tagline {
+  font-size: 0.85em;
+  color: #777;
+  margin-top: 0.5rem;
+  font-style: italic;
 }
 
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-    nav ul li {
-        margin: 5px 0;
-        text-align: center;
-    }
+@media (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+  nav .logo {
+    margin-bottom: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  nav ul li {
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  nav ul li a {
+    text-align: center;
+  }
+  main {
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  .tool-section {
+    padding: 20px;
+  }
+  .tool-section h2 {
+    font-size: 1.5rem;
+  }
+}
 
-    #grade-calculator-tool .subject-entry {
-        flex-direction: column;
-        align-items: stretch; /* Make inputs full width on small screens */
-    }
-    #grade-calculator-tool .subject-entry input,
-    #grade-calculator-tool .subject-entry button.remove-subject {
-        width: 100%; /* Full width for inputs/button in column layout */
-        margin-bottom: 5px;
-    }
-    #grade-calculator-tool button.remove-subject {
-        margin-top: 5px;
-    }
-
+@media (min-width: 768px) {
+  #grade-calculator-tool .subject-entry {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+  #grade-calculator-tool .subject-entry input[type="text"] {
+    flex-grow: 2;
+    margin-bottom: 0;
+  }
+  #grade-calculator-tool .subject-entry input[type="number"] {
+    flex-grow: 1;
+    width: auto;
+    min-width: 80px;
+    margin-bottom: 0;
+  }
+  #grade-calculator-tool button.remove-subject {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
 }
